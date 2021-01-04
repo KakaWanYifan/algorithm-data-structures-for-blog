@@ -1,5 +1,8 @@
-package Ch01;
+package ch01;
 
+/**
+ * 二分查找
+ */
 public class BinarySearch {
 
     public static void main(String[] args) {

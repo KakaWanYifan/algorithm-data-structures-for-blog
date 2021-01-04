@@ -1,7 +1,10 @@
-package Ch01;
+package ch01;
 
 import java.util.Arrays;
 
+/**
+ * 插入排序
+ */
 public class InsertionSort {
 
     public static void main(String[] args) {
