@@ -1,7 +1,10 @@
-package Ch01;
+package ch01;
 
 import java.util.Arrays;
 
+/**
+ * 冒泡排序
+ */
 public class BubbleSort {
 
     public static void main(String[] args) {
