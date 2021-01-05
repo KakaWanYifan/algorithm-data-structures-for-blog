@@ -1,4 +1,9 @@
 def onlyTwoOddTimesNum(arr):
+    """
+    唯二的奇数次的数字
+    :param arr:
+    :return: 唯二的奇数次的数字
+    """
     eor = 0
     for i in arr:
         eor = eor ^ i

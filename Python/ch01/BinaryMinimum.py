@@ -1,4 +1,9 @@
 def binaryMinimumIndex(arr):
+    """
+    二分法 局部最小
+    :param arr:
+    :return:
+    """
     # 如果数组的长度是1
     if len(arr) == 1:
         # 那么局部最小值的index就是0
