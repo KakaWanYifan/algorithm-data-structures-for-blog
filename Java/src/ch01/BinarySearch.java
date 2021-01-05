@@ -23,20 +23,20 @@ public class BinarySearch {
         // 最右边数字的index
         int rIndex = sortedArr.length - 1;
         // 中间数字的index
-        int midInxex = 0;
+        int midIndex = 0;
         while (lIndex != rIndex){
             // 中间的index
             // 不写作 (lIndex + rIndex)/2 的原因是这样不容易溢出
-            midInxex = lIndex + (rIndex - lIndex) / 2;
-            if (sortedArr[midInxex] == num){
+            midIndex = lIndex + (rIndex - lIndex) / 2;
+            if (sortedArr[midIndex] == num){
                 // 如果中间的数字就是要找的数字
                 return true;
-            }else if (sortedArr[midInxex] > num){
+            }else if (sortedArr[midIndex] > num){
                 // 如果中间的数字比要找的数字大，说明在左侧。
-                rIndex = midInxex - 1;
+                rIndex = midIndex - 1;
             }else{
                 // 反之，如果中间的数字比要找的数字小，说明在右侧
-                lIndex = midInxex + 1;
+                lIndex = midIndex + 1;
             }
         }
         return (sortedArr[lIndex] == num);
