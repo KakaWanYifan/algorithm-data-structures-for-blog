@@ -62,4 +62,3 @@ if __name__ == '__main__':
     reHead = reverse(head)
 
     output(reHead)
-
