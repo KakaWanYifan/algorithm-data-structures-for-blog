@@ -38,6 +38,7 @@ public class Inception {
     }
 
     public static void main(String[] args) {
+        // 定义Cobb的梦
         // 假的Cobb，他的陀螺不会停
         Cobb fakeCobb = new Cobb(false);
         fakeCobb.prev = new Cobb(false);
@@ -51,6 +52,7 @@ public class Inception {
         Cobb realCobb = new Cobb(true);
         fakeCobb.prev.prev.prev.prev.prev.prev.prev = realCobb;
 
+        // 递归，求Cobb梦的大小
         // fackCobb开始GoBack
         int DreamSize = GoBack(fakeCobb);
         System.out.println(DreamSize);

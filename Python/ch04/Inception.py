@@ -27,6 +27,7 @@ def GoBack(cobb):
 
 
 if __name__ == '__main__':
+    # 定义Cobb的梦
     # 假的Cobb
     fakeCobb = Cobb(False)
     fakeCobb.prev = Cobb(False)
@@ -40,6 +41,7 @@ if __name__ == '__main__':
     realCobb = Cobb(True)
     fakeCobb.prev.prev.prev.prev.prev.prev.prev = realCobb
 
+    # 递归，求Cobb梦的大小
     # fakeCobb开始GoBack
     DreamSize = GoBack(fakeCobb)
     print(DreamSize)

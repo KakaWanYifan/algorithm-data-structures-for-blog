@@ -26,12 +26,18 @@ public class ReverseLinkedList_Recur {
      * @return
      */
     public static Node reverse(Node currNode){
+        // 如果当前节点是空，或者当前节点的下一个节点是空，说明已经是尾节点了
         if (currNode == null || currNode.next == null)
             return currNode;
+        // 如果前面的没有命中，说明不是尾节点
+        // 当前节点的下一个节点
         Node nextNode = currNode.next;
+        // 下一个节点进行属于下一个节点反转
         Node newNextNode = reverse(nextNode);
+        // 当前节点做属于当前节点的反转操作
         nextNode.next = currNode;
         currNode.next = null;
+        // 返回
         return newNextNode;
     }
 

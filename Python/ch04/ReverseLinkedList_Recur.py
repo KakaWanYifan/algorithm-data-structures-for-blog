@@ -2,7 +2,7 @@
 class Node:
     def __init__(self, data):
         """
-
+        构造方法
         :param data:
         """
         self.data = data
@@ -17,16 +17,16 @@ def reverse(currNode):
     """
     # 如果当前节点是None或者当前节点的下一个节点是None
     if currNode is None or currNode.next is None:
-        # 返回当前节点，这个节点不用反转
+        # 说明是尾节点
         return currNode
 
+    # 如果前面的都没有命中，说明不是尾节点
     # 下一个节点
     nextNode = currNode.next
-    # 反转之后的下一个一个
+    # 下一个节点进入属于他的反转
     newNextNode = reverse(nextNode)
-    # 下一个节点
+    # 当前节点进行反转
     nextNode.next = currNode
-    # 当前节点的next指向None
     currNode.next = None
 
     return newNextNode

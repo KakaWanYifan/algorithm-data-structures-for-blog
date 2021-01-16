@@ -2,41 +2,39 @@
 class Node:
     def __init__(self, data):
         """
-
+        构造方法
         :param data:
         """
         self.data = data
         self.next = None
 
 
-def reverse(head):
+def reverse(currNode):
     """
     反转链表
-    :param head:
+    :param currNode: 当前节点
     :return: 
     """
     # 上一个节点
-    prev = None;
+    prevNode = None
     # 下一个节点
-    next = None;
-    # 当前节点
-    curr = head;
+    nextNode = None
     # 如果当前节点不等于空，说明还没反转完
-    while curr is not None:
+    while currNode is not None:
         # 把当前节点的下一个节点，赋值给next
-        next = curr.next;
+        nextNode = currNode.next
 
-        # 当前节点的下一个节点赋值为prev，反转
-        curr.next = prev;
+        # 当前节点的next指针，指向prevNode，反转
+        currNode.next = prevNode
 
         # 为下一轮循环做准备
         # 把当前节点作为前一个节点
         # 把下一个节点作为当前节点
-        prev = curr
-        curr = next
+        prevNode = currNode
+        currNode = nextNode
 
     # 如果当前节点是空的话，那么前一个节点就一定是反转之后链表的head
-    return prev
+    return prevNode
 
 
 def output(headNode):
