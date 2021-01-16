@@ -1,4 +1,4 @@
-package ch01;
+package bak.ch01;
 
 /**
  * 二分法 局部最小

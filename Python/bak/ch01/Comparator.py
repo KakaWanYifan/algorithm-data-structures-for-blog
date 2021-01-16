@@ -1,5 +1,5 @@
 import random
-import SelectionSort
+from ch01 import SelectionSort
 
 
 def knownFunc(arr_args):

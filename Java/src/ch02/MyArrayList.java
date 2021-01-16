@@ -1,7 +1,5 @@
 package ch02;
 
-import java.util.Arrays;
-
 /**
  * 我的数组容器
  */
@@ -92,7 +90,7 @@ public class MyArrayList {
 
         int deletedElement = array[index];
         //从左向右循环，逐个元素向左挪一位。
-        for(int i=index; i<size; i++){
+        for(int i=index; i<(size-1); i++){
             array[i] = array[i+1];
         }
         size--;
@@ -106,11 +104,15 @@ public class MyArrayList {
      * 输出数组
      */
     public void output(){
-        System.out.println(Arrays.toString(array));
+        String rnt = "";
+        for (int i = 0; i < size; i++) {
+            rnt = rnt + array[i] + " ";
+        }
+        System.out.println(rnt);
     }
 
     public static void main(String[] args) throws Exception {
-        MyArrayList myArrayList = new MyArrayList(5);
+        MyArrayList myArrayList = new MyArrayList(3);
         myArrayList.add(0,1);
         myArrayList.add(1,2);
         myArrayList.add(2,3);

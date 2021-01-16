@@ -1,7 +1,5 @@
 package ch02;
 
-import java.util.ArrayList;
-
 /**
  * 快慢指针，中间节点
  */
@@ -30,9 +28,9 @@ public class LinkedListMid {
      * @param head head节点
      * @return 中间节点列表，可能存在多个中间节点，所以是list。
      */
-    public static ArrayList<Node> getLinkedListMid(Node head){
+    public static String getLinkedListMid(Node head){
 
-        ArrayList<Node> rnt = new ArrayList<>();
+        String rnt = "";
 
         // head == null   没有节点，自然没有中间节点，返回null
         if (head == null){
@@ -59,20 +57,20 @@ public class LinkedListMid {
         for (int i = 0; i < fastTimes; i++) {
             midNode = midNode.next;
         };
-        rnt.add(midNode);
+        rnt = rnt + midNode.data;
 
         // 奇数偶数特殊处理
         // 如果fastNode的next不为空，说明是偶数个节点，那么中间节点就有两个。
         // 否则，奇数个节点，中间节点只有一个。
         if (fastNode.next != null){
-            rnt.add(midNode.next);
+            rnt = rnt + " " + midNode.next.data;
         }
 
         return rnt;
     }
 
     public static void main(String[] args) {
-        ArrayList<Node> midNodeList;
+        String midNode = "";
 
         Node test = null;
         System.out.print("当链表为空，中间节点是   ");
@@ -80,20 +78,16 @@ public class LinkedListMid {
         System.out.print("\n");
 
         test = new Node(1);
-        midNodeList = getLinkedListMid(test);
-        System.out.print("当链表长度为1，中间节点个数是   ");
-        System.out.print(midNodeList.size());
-        System.out.print("   中间节点是   ");
-        System.out.print(midNodeList.get(0).data);
+        midNode = getLinkedListMid(test);
+        System.out.print("当链表长度为1，中间节点是   ");
+        System.out.print(midNode);
         System.out.print("\n");
 
         test = new Node(1);
         test.next = new Node(2);
-        midNodeList = getLinkedListMid(test);
-        System.out.print("当链表长度为2，中间节点个数是   ");
-        System.out.print(midNodeList.size());
-        System.out.print("   中间节点是   ");
-        System.out.print(midNodeList.get(0).data + "," + midNodeList.get(1).data);
+        midNode = getLinkedListMid(test);
+        System.out.print("当链表长度为2，中间节点是   ");
+        System.out.print(midNode);
         System.out.print("\n");
 
         test = new Node(1);
@@ -102,11 +96,9 @@ public class LinkedListMid {
         test.next.next.next = new Node(4);
         test.next.next.next.next = new Node(5);
         test.next.next.next.next.next = new Node(6);
-        midNodeList = getLinkedListMid(test);
-        System.out.print("当链表长度为6，中间节点个数是   ");
-        System.out.print(midNodeList.size());
-        System.out.print("   中间节点是   ");
-        System.out.print(midNodeList.get(0).data + "," + midNodeList.get(1).data);
+        midNode = getLinkedListMid(test);
+        System.out.print("当链表长度为6，中间节点是   ");
+        System.out.print(midNode);
         System.out.print("\n");
 
 
@@ -117,11 +109,9 @@ public class LinkedListMid {
         test.next.next.next.next = new Node(5);
         test.next.next.next.next.next = new Node(6);
         test.next.next.next.next.next.next = new Node(7);
-        midNodeList = getLinkedListMid(test);
-        System.out.print("当链表长度为7，中间节点个数是   ");
-        System.out.print(midNodeList.size());
-        System.out.print("   中间节点是   ");
-        System.out.print(midNodeList.get(0).data);
+        midNode = getLinkedListMid(test);
+        System.out.print("当链表长度为7，中间节点是   ");
+        System.out.print(midNode);
         System.out.print("\n");
 
     }

@@ -73,7 +73,7 @@ class MyArrayList:
         if index < 0 or index >= self.size:
             raise Exception("超出数组实际元素范围！")
         # 从左到右，逐个元素向左挪动一位
-        for i in range(index, self.size):
+        for i in range(index, self.size-1):
             self.array[i] = self.array[i + 1]
         self.size -= 1
 
@@ -82,10 +82,10 @@ class MyArrayList:
         输出数组
         :return:
         """
-        print(self.array)
+        print(self.array[:self.size])
 
 
-myArrayList = MyArrayList(5)
+myArrayList = MyArrayList(3)
 myArrayList.add(0, 1)
 myArrayList.add(1, 2)
 myArrayList.add(2, 3)

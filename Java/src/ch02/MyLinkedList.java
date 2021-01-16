@@ -1,7 +1,5 @@
 package ch02;
 
-import java.util.Arrays;
-
 /**
  * 我的LinkedList
  */
@@ -164,16 +162,13 @@ public class MyLinkedList {
      * 输出链表
      */
     public void output(){
-        int[] rnt = new int[size];
-        int index = 0;
+        String rnt = "";
         Node temp = head;
         while (temp!=null) {
-            rnt[index] = temp.data;
+            rnt = rnt + temp.data + " ";
             temp = temp.next;
-
-            index++;
         }
-        System.out.println(Arrays.toString(rnt));
+        System.out.println(rnt);
     }
 
     public static void main(String[] args) throws Exception {

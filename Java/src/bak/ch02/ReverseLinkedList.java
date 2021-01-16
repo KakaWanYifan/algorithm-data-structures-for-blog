@@ -1,7 +1,7 @@
-package ch02;
+package bak.ch02;
 
-import ch02.Nodes.Node;
-import ch02.Nodes.DulNode;
+import bak.ch02.Nodes.Node;
+import bak.ch02.Nodes.DulNode;
 
 /**
  *

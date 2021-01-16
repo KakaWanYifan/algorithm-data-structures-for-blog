@@ -1,4 +1,4 @@
-package ch01;
+package bak.ch01;
 
 /**
  * 统计二进制中一的个数

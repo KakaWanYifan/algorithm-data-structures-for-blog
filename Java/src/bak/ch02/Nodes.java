@@ -1,4 +1,4 @@
-package ch02;
+package bak.ch02;
 
 /**
  * 两类节点

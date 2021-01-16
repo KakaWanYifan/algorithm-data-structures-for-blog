@@ -1,4 +1,4 @@
-package bak.ch01;
+package ch01;
 
 import java.util.Arrays;
 
