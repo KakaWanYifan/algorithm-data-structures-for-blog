@@ -26,11 +26,19 @@ public class BubbleSort {
         // 第一轮 从index为0的数字，到index为n-1的数字，进行比较，冒泡
         // 第一轮 从index为0的数字，到index为n-2的数字，进行比较，冒泡
         for (int i = 0; i < arr.length; i++) {
+            // 定义是否完成，初始状态为完成，后面只要有数据交换，就定义为没有完成。
+            boolean isComplete = true;
+
             int maxIndex = arr.length - i - 1;
             for (int j = 0; j < maxIndex; j++) {
                 if (arr[j] > arr[j+1]){
                     swap(arr,j,j+1);
+                    isComplete = false;
                 }
+            }
+            // 如果已经完成了，break
+            if (isComplete){
+                break;
             }
         }
         return arr;

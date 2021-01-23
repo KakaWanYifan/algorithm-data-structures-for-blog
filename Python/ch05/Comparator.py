@@ -1,5 +1,6 @@
 import random
-from ch01 import SelectionSort
+
+from ch05 import InsertionSort
 
 
 def knownFunc(arr_args):
@@ -37,7 +38,7 @@ if __name__ == '__main__':
         arr1 = genRandomArr(maxSize, maxValue)
         arr2 = arr1.copy()
         arr1 = knownFunc(arr1)
-        arr2 = SelectionSort.selectionSort(arr2)
+        arr2 = InsertionSort.insertionSort(arr2)
         if arr1 != arr2:
             isSuccess = False
             break

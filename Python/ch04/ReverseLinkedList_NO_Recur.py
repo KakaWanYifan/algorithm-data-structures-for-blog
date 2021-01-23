@@ -67,6 +67,3 @@ if __name__ == '__main__':
     reHead = reverse(head)
 
     output(reHead)
-
-    test = [1,2,3,4,5]
-    test.sort()

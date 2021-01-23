@@ -1,4 +1,4 @@
-package bak.ch01;
+package ch05;
 
 import java.util.Arrays;
 
@@ -23,10 +23,14 @@ public class InsertionSort {
      * @return
      */
     public static int[] insertionSort(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
+        // i从1开始，先做到前2个数有序。
+        // 为什么不是先做到前1个数有序？一个数字，不用排序了。
+        for (int i = 1; i < arr.length; i++) {
+            // maxIndex
             int maxIndex = i;
+
             for (int j = maxIndex; j > 0; j--) {
-                if (arr[j] < arr[j-1]){
+                if (arr[j] <= arr[j-1]){
                     swap(arr,j,j-1);
                 }else{
                     break;
