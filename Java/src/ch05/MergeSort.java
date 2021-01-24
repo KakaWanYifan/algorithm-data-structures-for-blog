@@ -2,7 +2,7 @@ package ch05;
 
 import java.util.Arrays;
 
-public class MergeSort_Recur {
+public class MergeSort {
 
     /**
      * 归并排序
@@ -18,6 +18,7 @@ public class MergeSort_Recur {
         if (L == R){
             return arr;
         }
+
         // 如果L不等于R，说明不止一个数，那么，递归吧
         // 中间
         int M = (L+R)/2;

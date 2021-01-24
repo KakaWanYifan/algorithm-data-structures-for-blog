@@ -30,7 +30,7 @@ public class InsertionSort {
             int maxIndex = i;
 
             for (int j = maxIndex; j > 0; j--) {
-                if (arr[j] <= arr[j-1]){
+                if (arr[j] < arr[j-1]){
                     swap(arr,j,j-1);
                 }else{
                     break;
