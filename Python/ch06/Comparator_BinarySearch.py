@@ -1,7 +1,9 @@
 import random
 
+from ch06 import BinarySearchExist, BinarySearchFirstE, BinarySearchLastE, BinarySearchFirstGE, BinarySearchLastLE
 
-def genRandomArr(max_size, max_value):
+
+def gen_random_arr(max_size, max_value):
     """
     生成一个随机的数组
     :param max_size: 生成的随机数组的最大长度
@@ -9,104 +11,119 @@ def genRandomArr(max_size, max_value):
     :return: 生成的随机数组
     """
     arr_rnt = []
-    randomSize = random.randint(0, max_size)
-    for i in range(randomSize):
+    random_size = random.randint(0, max_size)
+    for i in range(random_size):
         arr_rnt.append(random.randint(0, max_value))
 
     return arr_rnt
 
 
-def isEqual(a,b):
-    for i in  range(len(a)):
+def is_equal(a, b):
+    for i in range(len(a)):
         if a[i] != b[i]:
             return False
 
     return True
 
 
-def searchExist(arr,target):
-    isExist = False
+def search_exist(arr, target):
+    is_exist = False
     for iter in arr:
         if iter == target:
-            isExist = True
+            is_exist = True
             break
 
-    return isExist
+    return is_exist
 
 
-def searchFirstE(arr,target):
+def search_first_e(arr, target):
     index = -1
     for i in range(len(arr)):
         if arr[i] == target:
             index = i
-            break;
+            break
 
     return index
 
-def searchLastE(arr,target):
-    index = -1;
-    getEqual = false;
+
+def search_last_e(arr, target):
+    index = -1
+    get_equal = False
     for i in range(len(arr)):
-        if arr[i]  == target:
-            getEqual = true
+        if arr[i] == target:
+            get_equal = True
 
-        if getEqual == true){
-                if (i == arr.length - 1){
-                    index = i;
-                    break;
-                }else{
-                    if (arr[i + 1] > target){
-                        index = i;
-                        break;
-                    }
-                }
-            }
-        }
-        return index;
-    }
-
-    public static int searchFirstGE(int[] arr,int target){
-        int index = -1;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i]  >= target){
-                index = i;
-                break;
-            }
-        }
-        return index;
-    }
-
-    public static int searchLastLE(int[] arr,int target){
-        int index = -1;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i]  > target){
-                index = i-1;
-                break;
-            }
-            if (i == arr.length - 1){
-                index = i;
-            }
-        }
-        return index;
-    }
+        if get_equal:
+            if i == (len(arr) - 1):
+                index = i
+                break
+            elif arr[i + 1] > target:
+                index = i
+                break
+    return index
 
 
+def search_first_ge(arr, target):
+    index = -1
+    for i in range(len(arr)):
+        if arr[i] >= target:
+            index = i
+            break
 
+    return index
+
+
+def search_last_le(arr, target):
+    index = -1
+    for i in range(len(arr)):
+        if arr[i] > target:
+            index = i - 1
+            break
+        if i == (len(arr) - 1):
+            index = i
+
+    return index
 
 
 if __name__ == '__main__':
-    testTimes = 5000
+    testTimes = 500000
     maxSize = 100
     maxValue = 100
-    isSuccess = True
-
+    is_success = True
     for i in range(testTimes):
-        arr1 = genRandomArr(maxSize, maxValue)
-        arr2 = arr1.copy()
-        arr1 = knownFunc(arr1)
-        arr2 = InsertionSort.insertionSort(arr2)
-        if arr1 != arr2:
-            isSuccess = False
+        arr = gen_random_arr(maxSize, maxValue)
+
+        if arr is None or len(arr) < 1:
+            continue
+
+        arr.sort()
+        target = random.randint(0, maxValue)
+
+        print(arr)
+        print(target)
+
+        aList = []
+        a = search_exist(arr, target)
+        aList.append(1 if a else 0)
+        aList.append(search_first_e(arr, target))
+        aList.append(search_last_e(arr, target))
+        aList.append(search_first_ge(arr, target))
+        aList.append(search_last_le(arr, target))
+
+        bList = []
+        b = BinarySearchExist.binarySearchExist(arr, target)
+        bList.append(1 if b else 0)
+        bList.append(BinarySearchFirstE.binarySearchFirstE(arr, target))
+        bList.append(BinarySearchLastE.binarySearchLastE(arr, target))
+        bList.append(BinarySearchFirstGE.binarySearchFirstGE(arr, target))
+        bList.append(BinarySearchLastLE.binarySearchLastLE(arr, target))
+
+        if not is_equal(aList, bList):
+            print(arr)
+            print(target)
+            print(aList)
+            print(bList)
+            is_success = False
             break
 
-    print(isSuccess)
+    print(is_success)

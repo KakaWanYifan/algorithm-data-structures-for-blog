@@ -4,7 +4,7 @@ def binarySearchExist(arr, target):
     # 最右边数字的index
     rIndex = len(arr) - 1
     # 中间数字的index
-    midIndex = 0;
+    midIndex = 0
     # 一定是 lIndex < rIndex
     # 不能是 lIndex != rIndex
     while lIndex < rIndex:
