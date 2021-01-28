@@ -11,7 +11,7 @@ public class BinarySearchFirstE {
      * @return 是否存在
      */
     public static int binarySearchFirstE(int[] arr,int target){
-        // 记录第一个位置
+        // 记录位置
         int index = -1;
         // 最左边数字的index
         int lIndex = 0;
@@ -19,8 +19,6 @@ public class BinarySearchFirstE {
         int rIndex = arr.length - 1;
         // 中间数字的index
         int midIndex = 0;
-        // 一定是 lIndex < rIndex
-        // 不能是 lIndex != rIndex
         while (lIndex <= rIndex){
             // 中间的index
             // 不写作 (lIndex + rIndex)/2 的原因是这样不容易溢出

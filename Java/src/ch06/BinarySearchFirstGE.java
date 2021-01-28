@@ -10,7 +10,7 @@ public class BinarySearchFirstGE {
      * @param num 需要查找的数
      * @return 是否存在
      */
-    public static int binarySearchFirstGE(int[] arr,int target){
+    public static int a(int[] arr,int target){
         int index = -1;
         // 最左边数字的index
         int lIndex = 0;
