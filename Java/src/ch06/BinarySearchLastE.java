@@ -1,7 +1,5 @@
 package ch06;
 
-import java.util.Arrays;
-
 public class BinarySearchLastE {
 
     public static int binarySearchLastE(int[] arr,int target){
@@ -31,12 +29,5 @@ public class BinarySearchLastE {
             }
         }
         return index;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {2, 3, 5, 9, 9, 10, 10, 10, 10, 11, 11, 13, 14, 16, 18, 21, 25, 27, 27, 31, 35, 36, 37, 37, 38, 39, 39, 39, 39, 39, 41, 42, 42, 42, 43, 44, 44, 45, 45, 48, 48, 48, 48, 49, 49, 51, 53, 53, 54, 55, 56, 56, 56, 57, 59, 60, 60, 62, 62, 67, 67, 67, 72, 77, 77, 78, 82, 83, 84, 86, 88, 94, 94, 95, 98, 98, 99};
-        System.out.println(Arrays.toString(arr));
-        int target = 37;
-        System.out.println(binarySearchLastE(arr,target));
     }
 }

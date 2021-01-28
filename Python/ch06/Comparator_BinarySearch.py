@@ -18,14 +18,6 @@ def gen_random_arr(max_size, max_value):
     return arr_rnt
 
 
-def is_equal(a, b):
-    for i in range(len(a)):
-        if a[i] != b[i]:
-            return False
-
-    return True
-
-
 def search_exist(arr, target):
     is_exist = False
     for iter in arr:
@@ -99,9 +91,6 @@ if __name__ == '__main__':
         arr.sort()
         target = random.randint(0, maxValue)
 
-        print(arr)
-        print(target)
-
         aList = []
         a = search_exist(arr, target)
         aList.append(1 if a else 0)
@@ -118,7 +107,7 @@ if __name__ == '__main__':
         bList.append(BinarySearchFirstGE.binarySearchFirstGE(arr, target))
         bList.append(BinarySearchLastLE.binarySearchLastLE(arr, target))
 
-        if not is_equal(aList, bList):
+        if aList != bList:
             print(arr)
             print(target)
             print(aList)

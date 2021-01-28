@@ -34,11 +34,4 @@ public class BinarySearchExist {
         }
         return (arr[lIndex] == target);
     }
-
-    public static void main(String[] args) {
-        int[] arr = {2,3,5,7,11,13,17,19,23,29,31,37};
-        int num = 8;
-        System.out.print(binarySearchExist(arr,num));
-    }
-
 }

@@ -22,9 +22,3 @@ def binarySearchExist(arr, target):
             lIndex = midIndex + 1
 
     return arr[lIndex] == target
-
-
-if __name__ == '__main__':
-    a = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-    n = 8
-    print(binarySearchExist(a, n))

@@ -1,7 +1,5 @@
 package ch06;
 
-import java.util.Arrays;
-
 public class BinarySearchLastLE {
 
     public static int binarySearchLastLE(int[] arr,int target){
@@ -26,13 +24,5 @@ public class BinarySearchLastLE {
             }
         }
         return index;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1,3,5,7,9,11,13,17};
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-        int target = 8;
-        System.out.println(binarySearchLastLE(arr,target));
     }
 }

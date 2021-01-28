@@ -29,7 +29,7 @@ public class BinaryInsertionSort {
             // 保存当前值
             int key = arr[i];
             // 利用二分查找定位插入位置
-			int index = binarySearchAsc(arr, key, 0, i - 1) + 1;
+			int index = binarySearchLastLE(arr, key, 0, i - 1) + 1;
             // 将目标插入位置，同一时候右移目标位置右边的元素
             for (int j = i; j > index; j--) {
                 arr[j] = arr[j - 1];
@@ -41,14 +41,14 @@ public class BinaryInsertionSort {
     }
 
     /**
-     * 二分查找 升序 递归
-     * @param ary 给定已排序的待查数组
-     * @param target 查找目标
-     * @param from 当前查找的范围起点
-     * @param to 当前查找的返回终点
-     * @return 返回目标在数组中，按顺序应在的位置
+     * 二分查找最后一个小于等于的位置
+     * @param sortedArr
+     * @param num
+     * @param from
+     * @param to
+     * @return
      */
-    private static int binarySearchAsc(int[] sortedArr, int num, int from, int to) {
+    private static int binarySearchLastLE(int[] sortedArr, int num, int from, int to) {
         int index = -1;
         // 最左边数字的index
         int lIndex = from;

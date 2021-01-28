@@ -1,7 +1,5 @@
 package ch06;
 
-import java.util.Arrays;
-
 public class BinarySearchFirstGE {
 
     /**
@@ -10,7 +8,7 @@ public class BinarySearchFirstGE {
      * @param num 需要查找的数
      * @return 是否存在
      */
-    public static int a(int[] arr,int target){
+    public static int binarySearchFirstGE(int[] arr,int target){
         int index = -1;
         // 最左边数字的index
         int lIndex = 0;
@@ -32,13 +30,5 @@ public class BinarySearchFirstGE {
             }
         }
         return index;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {26, 76, 81, 81, 82, 84};
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-        int target = 19;
-        System.out.println(binarySearchFirstGE(arr,target));
     }
 }
