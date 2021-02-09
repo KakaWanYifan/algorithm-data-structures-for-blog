@@ -67,6 +67,8 @@ class Heap:
         print(self.a[1:self.count + 1])
 
     def pop_top(self):
+        if self.count == 0:
+            raise Exception("Heap has no element")
         index = 1
         rnt = self.a[index]
         # 换位置
@@ -123,5 +125,9 @@ if __name__ == '__main__':
     print(heap.pop_top())
     print(heap.pop_top())
     print(heap.pop_top())
-
-    heap.print()
+    print(heap.pop_top())
+    print(heap.pop_top())
+    print(heap.pop_top())
+    print(heap.pop_top())
+    print(heap.pop_top())
+    print(heap.pop_top())

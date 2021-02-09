@@ -23,7 +23,7 @@ public class Heap {
     }
 
     public void find(int data){
-        for (int i = 1; i < a.length; i++) {
+        for (int i = 1; i < count; i++) {
             if (a[i] == data){
                 System.out.println(i);
                 return;
@@ -93,6 +93,42 @@ public class Heap {
         return true;
     }
 
+    public int pop_top() throws Exception {
+        if (count == 0){
+            throw new Exception("Heap has no element");
+        }
+
+        int index = 1;
+        int rnt = a[index];
+        // 换位置
+        a[index] = a[count];
+        count = count-1;
+
+        while (true) {
+            // 最大值的位置
+            int maxPos = index;
+            // 判断左子节点
+            // 如果有左子节点，且小于左子节点
+            if (index*2 <= count && a[maxPos] < a[index*2])
+                // 左子节点作为最大的位置
+                maxPos = index*2;
+            // 判断右子节点
+            // 如果有右子节点，且最大位置的节点小于右子节点
+            if (index*2+1 <= count && a[maxPos] < a[index*2+1])
+                // 那么，右子节点的作为最大的位置
+                maxPos = index*2+1;
+            // 如果左右节点都比较过了，index就是最大位置，那么说明完成。
+            if (maxPos == index)
+                break;
+            // 互换
+            swap(a, index, maxPos);
+            // 迭代
+            index = maxPos;
+        }
+        return rnt;
+
+    }
+
     public void print(){
         String rnt = "";
         for (int i = 1; i <= count; i++) {
@@ -104,7 +140,7 @@ public class Heap {
         System.out.println(rnt);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Heap heap = new Heap(10);
         heap.insert(9);
         heap.insert(8);
@@ -129,5 +165,16 @@ public class Heap {
         heap.print();
 
         heap.find(3);
+
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+        System.out.println(heap.pop_top());
+
     }
 }

@@ -1,6 +1,7 @@
 import random
 
 from ch05 import InsertionSort
+from ch09 import HeapSort
 
 
 def knownFunc(arr_args):
@@ -36,11 +37,14 @@ if __name__ == '__main__':
 
     for i in range(testTimes):
         arr1 = genRandomArr(maxSize, maxValue)
+        print(arr1)
         arr2 = arr1.copy()
         arr1 = knownFunc(arr1)
-        arr2 = InsertionSort.insertionSort(arr2)
+        arr2 = HeapSort.heap_sort(arr2)
         if arr1 != arr2:
             isSuccess = False
+            print(arr1)
+            print(arr2)
             break
 
     print(isSuccess)

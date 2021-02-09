@@ -2,9 +2,6 @@ package ch09;
 
 import java.util.Arrays;
 
-/**
- * 堆排序
- */
 public class HeapSort {
 
     public static void swap(int[] a, int i, int j){
@@ -14,19 +11,19 @@ public class HeapSort {
     }
 
     /**
-     * 排序
-     * <p>
-     * 堆元素是从数组下标0开始
      *
      * @param arr
+     * @return
      */
-    public static void sort(int[] arr) {
+    public static int[] heapSort(int[] arr) {
         if (arr.length <= 1) {
-            return;
+            return arr;
         }
 
         // 1、建堆
-        buildHeap(arr);
+        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+            heapify(arr, arr.length - 1, i);
+        }
 
         // 2、排序
         int k = arr.length - 1;
@@ -34,30 +31,12 @@ public class HeapSort {
             // 将堆顶元素（最大）与最后一个元素交换位置
             swap(arr, 0, k);
             // 将剩下元素重新堆化，堆顶元素变成最大元素
-            heapify(arr, --k, 0);
+            k = k - 1;
+            heapify(arr, k, 0);
         }
+        return arr;
     }
 
-    /**
-     * 建堆
-     *
-     * @param arr
-     */
-    private static void buildHeap(int[] arr) {
-        // (arr.length - 1) / 2 为最后一个叶子节点的父节点
-        // 也就是最后一个非叶子节点，依次堆化直到根节点
-        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
-            heapify(arr, arr.length - 1, i);
-        }
-    }
-
-    /**
-     * 堆化
-     *
-     * @param arr 要堆化的数组
-     * @param n   最后堆元素下标
-     * @param i   要堆化的元素下标
-     */
     private static void heapify(int[] arr, int n, int i) {
         while (true) {
             // 最大值位置
@@ -83,11 +62,11 @@ public class HeapSort {
 
 
     public static void main(String[] args) {
-        int[] arr = {3,44,38,5,47,15,36,26,27,2,46,4,19,50,48};
+        int[] arr = {33, 99, 27, 9, 58, 6, 55, 38, 57, 34, 98, 75, 61, 86, 9, 22, 79, 80, 2, 0, 13, 39, 76, 62, 80, 34, 9, 32, 90, 95, 4, 32, 56, 11, 93, 4, 77, 57, 34, 71, 69, 44, 66, 100, 0, 29, 10, 23, 76, 77, 74, 40, 96, 31, 17, 57, 29, 53, 19, 15, 89, 31, 83, 85, 38, 9, 32, 58, 6, 41, 36, 56, 91, 99, 80, 12, 20, 17, 66, 29, 67, 93, 82, 2, 24, 49, 100, 22, 35, 94, 72, 21, 55, 25, 38, 79, 93, 28, 100};
         System.out.println(Arrays.toString(arr));
         // 只有数组不为空，并且数组的长度大于1，这时候的排序才有意义
         if (null != arr && arr.length > 1){
-            sort(arr);
+            heapSort(arr);
         }
         System.out.println(Arrays.toString(arr));
     }

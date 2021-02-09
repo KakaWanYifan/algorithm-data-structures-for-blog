@@ -1,6 +1,6 @@
 package ch05;
 
-import ch06.BinaryInsertionSort;
+import ch09.HeapSort;
 
 import java.util.Arrays;
 
@@ -20,7 +20,7 @@ public class Comparator {
             // 用已知方法对数组进行排序
             knownFunc(arr1);
             // 选择排序
-            arr2 = BinaryInsertionSort.binaryInsertionSort(arr2);
+            arr2 = HeapSort.heapSort(arr2);
             if (isEqual(arr1,arr2) == false){
                 // 只要有一个测试没过，就失败。
                 isSuccess = false;
