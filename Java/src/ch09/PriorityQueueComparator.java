@@ -33,11 +33,12 @@ public class PriorityQueueComparator {
     public static void main(String[] args) {
         PriorityQueue<C> q = new PriorityQueue<C>(new com());
         q.offer(new C("c1",3));
-        q.offer(new C("c1",1));
-        q.offer(new C("c1",4));
-        q.offer(new C("c1",5));
-        q.offer(new C("c1",9));
+        q.offer(new C("c2",1));
+        q.offer(new C("c3",4));
+        q.offer(new C("c4",5));
+        q.offer(new C("c5",9));
 
+        System.out.println(q.poll().toString());
         System.out.println(q.poll().toString());
         System.out.println(q.poll().toString());
         System.out.println(q.poll().toString());
