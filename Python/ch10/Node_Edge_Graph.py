@@ -16,6 +16,12 @@ class Edge:
         self.from_node = f
         self.to_node = t
 
+    def __lt__(self, other):
+        if self.weight < other.weight:
+            return True
+        else:
+            return False
+
     def __str__(self):
         return "Edge{" + "weight=" + str(self.weight) + ", from_node=" + str(self.from_node.id) + ", to=" + str(self.to_node.id) + "}"
 
