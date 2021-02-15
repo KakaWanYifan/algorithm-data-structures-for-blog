@@ -1,6 +1,6 @@
 package ch11;
 
-public class PredictWinner {
+public class PredictWinnerRecur {
 
     public static int predictWinner(int[] arr,int L,int R){
         if (L == R){

@@ -1,7 +1,7 @@
 package ch11;
 
 
-public class Knapsack {
+public class KnapsackRecur {
 
 
     /**
