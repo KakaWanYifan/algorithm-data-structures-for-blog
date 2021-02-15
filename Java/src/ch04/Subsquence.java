@@ -1,10 +1,10 @@
-package ch11;
+package ch04;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class AllSubsquence {
+public class Subsquence {
 
     public static ArrayList<String> process(Queue<Character> queue){
         ArrayList<String> rnt = new ArrayList<>();
@@ -19,6 +19,7 @@ public class AllSubsquence {
             rnt.add(s_yes + str);
             rnt.add(s_no + str);
         }
+
         return rnt;
     }
 
